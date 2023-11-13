@@ -1,0 +1,182 @@
+body{
+    background-color: grey;
+}
+
+.search-box,
+.watchlist,
+.sevenday-forecast,
+.monthly-prediction,
+.radar,
+.naturaldisaster-tracker {
+    margin: 20px;
+}
+
+/* Styles for the search box */
+.search-box{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 700px;
+    position:relative;
+    right: -330px;
+    margin: 10px;
+    border: 2px solid;
+    border-color: black;
+}
+
+/* Styles for the watclist */
+.watchlist{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 600px;
+    position:relative;
+    right:-370px;
+    margin-top: 10px;
+    border: 2px solid;
+    border-color: black;
+}
+
+/* Styles for the sevenday-forecast */
+.sevenday-forecast{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    height: 240px;
+    width: 700px;
+    position:relative;
+    right:-323px;
+    margin: 10px;
+    flex-direction: row;
+    border: 2px solid;
+    border-color: black;
+}
+
+/* Styles for the day 1 */
+.day1-griditem{
+    background-color: white;
+    height: 238px;
+    width: 100px;
+    border: 1px solid;
+    border-color: black;
+    position:relative;
+}
+
+/* Styles for the day 2-7 container */
+.flex-items {
+    display: flex;
+    height: 240px;
+    width: 600px;
+}
+
+/* Styles for the styles for days 2-7 */
+.day2-flexitem,
+.day3-flexitem,
+.day4-flexitem ,
+.day5-flexitem,
+.day6-flexitem,
+.day7-flexitem{
+    background-color: white;
+    height: 238px;
+    width: 100px;
+    border: 1px solid black;
+    position: relative;
+    flex: 1; 
+}
+
+/* Styles for the montly prediction */
+.monthly-prediction{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    height: 370px;
+    width: 700px;
+    position:relative;
+    right:-323px;
+    margin: 10px;
+    border: 2px solid;
+    border-color: black;
+}
+
+/* Styles for the radar */
+.radar{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+    width: 600px;
+    position:relative;
+    right:-370px;
+    margin: 10px;
+    border: 2px solid;
+    border-color: black;
+}
+
+/* Styles for the natural diaster */
+.naturaldisaster-tracker{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 600px;
+    position:relative;
+    right:-370px;
+    margin: 10px;
+    border: 2px solid;
+    border-color: black;
+}
+
+/* Styles for the footer */
+
+/* Styles for the company column  */
+.company-column{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    height: 100px;
+    width: 300px;
+    position:absolute;
+    right:600px;
+    top:-1000 ;
+    margin: 10px;
+    border: 2px solid;
+    border-color: black;
+}
+
+/* Styles for the resesarch column */
+.resources-column{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    height: 100px;
+    width: 300px;
+    position:absolute;
+    right:900px;
+    top: -1000;
+    margin: 10px;
+    border: 2px solid;
+    border-color: black;
+}
+
+/* Styles for the contact column*/
+.additionalcontact-column{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    height: 100px;
+    width: 300px;
+    position:absolute;
+    right:300px;
+    top: -1000;
+    margin: 10px;
+    border: 2px solid;
+    border-color: black;
+}
