@@ -1,14 +1,16 @@
-body{
-    background-color: grey;
+* {
+    margin: 20px;
+    box-sizing: border-box;
 }
 
-.search-box,
-.watchlist,
-.sevenday-forecast,
-.monthly-prediction,
-.radar,
-.naturaldisaster-tracker {
-    margin: 20px;
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: grey;
+    width: 100vw;
+    margin: 0px;
 }
 
 /* Styles for the search box */
@@ -19,9 +21,6 @@ body{
     align-items: center;
     height: 100px;
     width: 700px;
-    position:relative;
-    right: -330px;
-    margin: 10px;
     border: 2px solid;
     border-color: black;
 }
@@ -34,8 +33,6 @@ body{
     align-items: center;
     height: 200px;
     width: 600px;
-    position:relative;
-    right:-370px;
     margin-top: 10px;
     border: 2px solid;
     border-color: black;
@@ -49,8 +46,6 @@ body{
     align-items: center;
     height: 240px;
     width: 700px;
-    position:relative;
-    right:-323px;
     margin: 10px;
     flex-direction: row;
     border: 2px solid;
@@ -58,35 +53,34 @@ body{
 }
 
 /* Styles for the day 1 */
-.day1-griditem{
+.day1{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(13, 1fr);
+    overflow-y: scroll;
+
     background-color: white;
     height: 238px;
     width: 100px;
+    margin: 0px;
     border: 1px solid;
     border-color: black;
-    position:relative;
 }
 
 /* Styles for the day 2-7 container */
-.flex-items {
+/* .flex-items {
     display: flex;
     height: 240px;
     width: 600px;
-}
+} */
 
 /* Styles for the styles for days 2-7 */
-.day2-flexitem,
-.day3-flexitem,
-.day4-flexitem ,
-.day5-flexitem,
-.day6-flexitem,
-.day7-flexitem{
+.sevenday{
     background-color: white;
     height: 238px;
     width: 100px;
+    margin: 0px;
     border: 1px solid black;
-    position: relative;
-    flex: 1; 
 }
 
 /* Styles for the montly prediction */
@@ -97,8 +91,6 @@ body{
     align-items: center;
     height: 370px;
     width: 700px;
-    position:relative;
-    right:-323px;
     margin: 10px;
     border: 2px solid;
     border-color: black;
@@ -112,8 +104,6 @@ body{
     align-items: center;
     height: 550px;
     width: 600px;
-    position:relative;
-    right:-370px;
     margin: 10px;
     border: 2px solid;
     border-color: black;
@@ -127,8 +117,6 @@ body{
     align-items: center;
     height: 300px;
     width: 600px;
-    position:relative;
-    right:-370px;
     margin: 10px;
     border: 2px solid;
     border-color: black;
@@ -143,9 +131,6 @@ body{
     justify-content: center;
     height: 100px;
     width: 300px;
-    position:absolute;
-    right:600px;
-    top:-1000 ;
     margin: 10px;
     border: 2px solid;
     border-color: black;
@@ -158,9 +143,6 @@ body{
     justify-content: center;
     height: 100px;
     width: 300px;
-    position:absolute;
-    right:900px;
-    top: -1000;
     margin: 10px;
     border: 2px solid;
     border-color: black;
@@ -173,9 +155,6 @@ body{
     justify-content: center;
     height: 100px;
     width: 300px;
-    position:absolute;
-    right:300px;
-    top: -1000;
     margin: 10px;
     border: 2px solid;
     border-color: black;
