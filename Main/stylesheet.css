@@ -54,7 +54,7 @@ body{
     width: 700px;
     margin: 10px;
     flex-direction: row;
-    border: 2px solid;
+    border: 1px solid;
     border-color: black;
 }
 
