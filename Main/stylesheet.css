@@ -58,6 +58,15 @@ body{
     border-color: black;
 }
 
+/* Styles for the styles for days 1-7 */
+.sevenday{
+    background-color: var(--bg1);
+    height: 238px;
+    width: 100px;
+    margin: 0px;
+    border: 1px solid black;
+}
+
 /* Styles for the day 1 */
 .day1 {
     display: grid;
@@ -89,15 +98,6 @@ body{
     height: 240px;
     width: 600px;
 } */
-
-/* Styles for the styles for days 2-7 */
-.sevenday{
-    background-color: var(--bg1);
-    height: 238px;
-    width: 100px;
-    margin: 0px;
-    border: 1px solid black;
-}
 
 /* Styles for the montly prediction */
 .monthly-prediction{
