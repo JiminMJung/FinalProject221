@@ -1,5 +1,9 @@
+:root {
+    --main_bg: grey;
+    --bg1: rgb(231, 231, 231);
+}
+
 * {
-    margin: 20px;
     box-sizing: border-box;
 }
 
@@ -8,7 +12,7 @@ body{
     flex-direction: column;
     align-items: center;
 
-    background-color: grey;
+    background-color: var(--main_bg);
     width: 100vw;
     margin: 0px;
 }
@@ -16,11 +20,13 @@ body{
 /* Styles for the search box */
 .search-box{
     display: flex;
-    background-color: white;
+    background-color: var(--bg1);
     justify-content: center;
     align-items: center;
-    height: 100px;
-    width: 700px;
+
+    margin-top: 0px;
+    height: 50px;
+    width: 100vw;
     border: 2px solid;
     border-color: black;
 }
@@ -28,11 +34,11 @@ body{
 /* Styles for the watclist */
 .watchlist{
     display: flex;
-    background-color: white;
+    background-color: var(--bg1);
     justify-content: center;
     align-items: center;
     height: 200px;
-    width: 600px;
+    width: 100vw;
     margin-top: 10px;
     border: 2px solid;
     border-color: black;
@@ -41,7 +47,7 @@ body{
 /* Styles for the sevenday-forecast */
 .sevenday-forecast{
     display: flex;
-    background-color: white;
+    background-color: var(--bg1);
     justify-content: center;
     align-items: center;
     height: 240px;
@@ -53,18 +59,28 @@ body{
 }
 
 /* Styles for the day 1 */
-.day1{
+.day1 {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(13, 1fr);
     overflow-y: scroll;
 
-    background-color: white;
+    background-color: var(--bg1);
     height: 238px;
     width: 100px;
     margin: 0px;
     border: 1px solid;
     border-color: black;
+}
+
+.hourly {
+    padding: 10px;
+    border-bottom: 1px solid;
+    border-color: black;
+}
+
+.hour12 {
+    border-bottom: none;
 }
 
 /* Styles for the day 2-7 container */
@@ -76,7 +92,7 @@ body{
 
 /* Styles for the styles for days 2-7 */
 .sevenday{
-    background-color: white;
+    background-color: var(--bg1);
     height: 238px;
     width: 100px;
     margin: 0px;
@@ -86,7 +102,7 @@ body{
 /* Styles for the montly prediction */
 .monthly-prediction{
     display: flex;
-    background-color: white;
+    background-color: var(--bg1);
     justify-content: center;
     align-items: center;
     height: 370px;
@@ -99,7 +115,7 @@ body{
 /* Styles for the radar */
 .radar{
     display: flex;
-    background-color: white;
+    background-color: var(--bg1);
     justify-content: center;
     align-items: center;
     height: 550px;
@@ -112,7 +128,7 @@ body{
 /* Styles for the natural diaster */
 .naturaldisaster-tracker{
     display: flex;
-    background-color: white;
+    background-color: var(--bg1);
     justify-content: center;
     align-items: center;
     height: 300px;
@@ -124,22 +140,17 @@ body{
 
 /* Styles for the footer */
 
-/* Styles for the company column  */
-.company-column{
+.footer {
     display: flex;
-    background-color: white;
     justify-content: center;
-    height: 100px;
-    width: 300px;
-    margin: 10px;
-    border: 2px solid;
-    border-color: black;
+    align-items: center;
+    width: 100vw;
 }
 
 /* Styles for the resesarch column */
 .resources-column{
     display: flex;
-    background-color: white;
+    background-color: var(--bg1);
     justify-content: center;
     height: 100px;
     width: 300px;
@@ -151,7 +162,7 @@ body{
 /* Styles for the contact column*/
 .additionalcontact-column{
     display: flex;
-    background-color: white;
+    background-color: var(--bg1);
     justify-content: center;
     height: 100px;
     width: 300px;
