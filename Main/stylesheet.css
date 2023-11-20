@@ -1,6 +1,6 @@
 :root {
-    --main_bg: grey;
-    --bg1: rgb(231, 231, 231);
+    --main_bg: rgb(81, 77, 77);
+    --bg1: rgb(203, 216, 214);
 }
 
 * {
@@ -21,14 +21,20 @@ body{
 .search-box{
     display: flex;
     background-color: var(--bg1);
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 
     margin-top: 0px;
     height: 50px;
     width: 100vw;
-    border: 2px solid;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
     border-color: black;
+}
+
+#search-inputbox {
+    margin-left: 5px;
+    width: 300px;
 }
 
 /* Styles for the watclist */
@@ -40,7 +46,8 @@ body{
     height: 200px;
     width: 100vw;
     margin-top: 10px;
-    border: 2px solid;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
     border-color: black;
 }
 
@@ -108,8 +115,11 @@ body{
     height: 370px;
     width: 700px;
     margin: 10px;
+
+    /* border changes */
     border: 2px solid;
     border-color: black;
+    border-radius: 5%;
 }
 
 /* Styles for the radar */
