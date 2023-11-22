@@ -100,9 +100,6 @@ body{
     padding: 10px;
     border: 1px solid;
     border-color: white;
-    
-    
-    
 }
 
 
@@ -119,6 +116,7 @@ body{
     flex-direction: row;
 
 }
+
 .sevenday{
     background-color: var(--bg1);
     height: 296px;
@@ -131,7 +129,7 @@ body{
 
 }
 
-.monthly-prediction{
+.government-alerts {
     display: flex;
     background-color: var(--bg1);
     justify-content: center;
@@ -146,14 +144,13 @@ body{
 footer {
     display: flex;
     justify-content: center; 
-    align-items: center; 
-    background-color: grey;
+    align-items: center;
     width: 100vw;
     border: 2px solid;
-     border-color: white;
+    border-color: white;
   }
   
-  .resources-column{
+.resources-column{
         display: flex;
         background-color: black;
         width: 500px;
@@ -163,8 +160,8 @@ footer {
         flex-direction: row; 
         justify-content: space-around; 
 
-  }
-  .additionalcontact-column {
+}
+.additionalcontact-column {
     display: flex;
     background-color: black;
     width: 500px;
@@ -173,4 +170,4 @@ footer {
     border-color: white;
     flex-direction: row; 
     justify-content: space-around; 
-  }
+}
