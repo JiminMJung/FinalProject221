@@ -6,8 +6,8 @@
 
 * {
     box-sizing: border-box;
-    margin: 10px;
 }
+
 /* Styles for body*/
 body{
    display: flex;
@@ -17,10 +17,8 @@ body{
    margin: 0px;
    color:  white;
    background-color: var(--main_bg);
-
 }
 
-/* Styles for the search box */
 /* Styles for the search box */
 .search-box{
     display: flex;
