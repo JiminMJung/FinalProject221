@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Weather Dashboard</title>
         <link rel="stylesheet"href="test.css">
+        <!-- Personal FontAwesome account for imgs-->
+        <script src="https://kit.fontawesome.com/a9fece12f5.js" crossorigin="anonymous"></script>
         <script defer src="mainJS.js" type="text/javascript"></script>
     </head>
 
@@ -12,30 +14,47 @@
         <!-- Search Box -->
         <div class="search-box">
             <div class="row">
-            <input type="text" id="search-inputbox" placeholder="Search-location"
-            autocomplete="off"> <!-- watched a youtube video on autocomplete (WIP) -->
-            or
-            <input type="text" id="zipcode" placeholder="zipcode" 
-            autocomplete="off">
-            <button>Search</button>
+                <i class="fa-solid fa-location-dot"></i>
+                <input type="text" id="search-inputbox" placeholder="Search-location">
+                <button class="fa-solid fa-magnifying-glass"></button>
             </div>
-            <!-- Search will need Searchinput() function in JS -->
+            <div class="invalid-search">
+                <img src="images/404error.png" alt="404 Error">
+                <p>Invalid Location. Please Try Again...</p>
+            </div>
         </div>
 
         <!-- Location -->
-        <div class="location">
-            <h2>Location</h2>
+        <div class="city-name">
+            <h2>City name</h2>
 
         </div>
 
         <!-- Current Weather Img -->
-        <div class="location-symbol">
-            <h2> location symbol</h2>
+        <div class="current-weatherimg">
+            <h2> Current Weather Img </h2>
+            <img src="images/default.png" alt="Default img">
         </div>
 
         <!-- Current Day Information -->
         <div class="current-dayinfo">
             <h2>Today's Weather</h2>
+            <div class="weather-details" id="weather-details">
+                <i class="fa-solid fa-temperature-full"></i>
+                <p><strong>Temperature:</strong> <div id="temperature"></div></p>
+                <i class="fa-solid fa-temperature-arrow-up"></i>
+                <p><strong>Humidity:</strong> <div id="humidity"></div></p>
+                <i class="fa-solid fa-wind"></i>
+                <p><strong>Wind:</strong> <div id="wind"></div></p>
+                <i class="fa-solid fa-eye"></i>
+                <p><strong>Visibility:</strong> <div id="visibility"></div></p>
+                <i class="fa-solid fa-cloud"></i>
+                <p><strong>Cloud Cover:</strong> <div id="cloudCover"></div></p>
+                <i class="fa-solid fa-cloud-sun"></i>
+                <p><strong>Sunrise:</strong> <div id="sunrise"></div></p>
+                <i class="fa-solid fa-cloud-moon"></i>
+                <p><strong>Sunset:</strong> <div id="sunset"></div></p>
+            </div>
         </div>
 
          <!-- Today's Hourly Forecast -->
@@ -92,6 +111,7 @@
                     <a href="https://github.com/JiminMJung/FinalProject221.git">Github</a>
                     <a href=" ">LinkedIn</a>
                     <a href=" ">Business Email</a>
+                    <a href=" ">Referances</a>
                 </div>
             </div>
         </footer>

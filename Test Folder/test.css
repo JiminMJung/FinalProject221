@@ -40,7 +40,7 @@ body{
 }
 
 /*  Styles location */
-.location {
+.city-name {
     display: flex;
     background-color: var(--bg1);
     justify-content: center;
@@ -52,13 +52,13 @@ body{
 }
 
 /*  Styles location symbol */
-.location-symbol{
+.current-weatherimg{
     display: flex;
     background-color: var(--bg1);
     justify-content: center;
     align-items: center;
-    height: 100px;
-    width: 300px;
+    height: 250px;
+    width: 200px;
     border: 2px solid;
     border-color: white;
     flex-wrap: wrap;
