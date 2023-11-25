@@ -2,7 +2,7 @@
 <html lang = "en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
         <title>Weather Dashboard</title>
         <link rel="stylesheet"href="test.css">
         <!-- Personal FontAwesome account for imgs-->
@@ -15,16 +15,20 @@
         <div class="search-box">
             <div class="row">
                 <i class="fa-solid fa-location-dot"></i>
-                <input type="text" id="search-inputbox" placeholder="Search-location">
-                <button class="fa-solid fa-magnifying-glass"></button>
+                <input type="text" id="search-inputbox" placeholder="Search-location"
+                autocomplete="off">
+                or
+                <input type="text" id="zipcode" placeholder="Zipcode"
+                autocomplete="off">
+                <button class="fa-solid fa-magnifying-glass">Search</button>
             </div>
             <div class="invalid-search">
                 <img src="images/404error.png" alt="404 Error">
-                <p>Invalid Location. Please Try Again...</p>
+                Invalid Location. Please Try Again...
             </div>
         </div>
 
-        <!-- Location -->
+        <!-- Search Location -->
         <div class="city-name">
             <h2>City name</h2>
 
@@ -58,22 +62,19 @@
         </div>
 
          <!-- Today's Hourly Forecast -->
-         <div class="todays-hourlyforecast">
-            <div class="day1">
-                <div class="hourly d1-day">Monday</div>
-                <div class="hourly hour1">hour1</div>
-                <div class="hourly hour2">hour1</div>
-                <div class="hourly hour3">hour1</div>
-                <div class="hourly hour4">hour1</div>
-                <div class="hourly hour5">hour1</div>
-                <div class="hourly hour6">hour1</div>
-                <div class="hourly hour7">hour1</div>
-                <div class="hourly hour8">hour1</div>
-                <div class="hourly hour9">hour1</div>
-                <div class="hourly hour10">hour1</div>
-                <div class="hourly hour11">hour1</div>
-                <div class="hourly hour12">hour1</div>
-            </div>
+         <div class="sevenday-forecast">
+            <div class="hourly hour1">hour1</div>
+            <div class="hourly hour2">hour2</div>
+            <div class="hourly hour3">hour3</div>
+            <div class="hourly hour4">hour4</div>
+            <div class="hourly hour5">hour5</div>
+            <div class="hourly hour6">hour6</div>
+            <div class="hourly hour7">hour7</div>
+            <div class="hourly hour8">hour8</div>
+            <div class="hourly hour9">hour9</div>
+            <div class="hourly hour10">hour10</div>
+            <div class="hourly hour11">hour11</div>
+            <div class="hourly hour12">hour12</div>
         </div>
         
         <!-- Rest of the week Forecast -->
