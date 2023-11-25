@@ -2,7 +2,7 @@ const apiKey = '8892493b7ce9e7fdbf0ba96f8380cb318';
 
 // Main Function
 document.querySelector('.search-box button').addEventListener('click', function () {
-    const cityName = document.getElementById('search-inputbox').value;
+    const cityName = document.getElementById('#search-inputbox').value;
 
     // Geocoding Api Call
     const geocodeApi = `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(cityName)}&limit=1&appid=${apiKey}`;
@@ -12,7 +12,7 @@ document.querySelector('.search-box button').addEventListener('click', function 
 
             const city = data[0];
             // This displays the city name (Line 16) and calls the two functions to update weather image and weather details (Uses line 13. Json response data is an array)
-            document.querySelector('.city-name h2').innerText = city.name;
+            document.querySelector('.city-name').innerText = city.name;
             updateWeatherImage(city.lat, city.lon);
             updateWeatherDetails(city.lat, city.lon);
         })
