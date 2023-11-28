@@ -1,8 +1,12 @@
 const apiKey = '8892493b7ce9e7fdbf0ba96f8380cb318';
 
 // Main Function
-document.querySelector('.search-box button').addEventListener('click', function () {
-    let cityName = document.getElementById('search-inputbox').value;
+document.querySelector('.search-box button').addEventListener("click", () => {
+    const cityName = document.getElementById("search-inputbox").value;
+
+    console.log(cityName);
+    
+    const zipcode = document.getElementById("zipcode").value;
 
     // Geocoding Api Call
     const geocodeApi = `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(cityName)}&limit=1&appid=${apiKey}`;
