@@ -10,7 +10,6 @@
 
 /* Styles for body*/
 body{
-   display: flex;
    flex-direction: column;
    /* align-items: center; */
 
@@ -20,9 +19,10 @@ body{
    margin: 0px;
 }
 
+
+
 /* Styles for the search box */
 .search-box{
-    display: flex;
     background-color: var(--bg1);
     justify-content: left;
     align-items: center;
@@ -45,14 +45,19 @@ body{
     width: 250px;
 }
 
+.container{
+    width: 1000px;
+    border: 1px solid red;
+    
+    margin: auto;
+}
+
 /*  Styles location */
 .city-name {
-    display: flex;
     background-color: var(--bg1);
     justify-content: center;
     align-items: center;
     height: 100px;
-    width: 100vw;
     margin-top: 10px;
     border: 2px solid;
     border-color: white;
@@ -60,12 +65,11 @@ body{
 
 /*  Styles location symbol */
 .current-weatherimg{
-    display: flex;
     background-color: var(--bg1);
     justify-content: center;
     align-items: center;
     height: 250px;
-    width: 400px;
+    width: 100%;
 
     margin-top: 10px;
     border: 2px solid;
@@ -75,12 +79,11 @@ body{
 
 /*  Styles current-dayinfo */
 .current-dayinfo{
-    display: flex;
     background-color: var(--bg1);
     justify-content: center;
     align-items: center;
     height: 500px;
-    width: 750px;
+    width: 100%;
 
     margin-top: 10px;
     border: 2px solid;
@@ -96,7 +99,7 @@ body{
 
     background-color: var(--bg1);
     height: 220px;
-    width: 1000px;
+    width: 100%;
 
     margin-top: 10px;
     border: 1px solid;
@@ -117,37 +120,35 @@ body{
 
 /* Styles restoftheweek-forecast */
 .restoftheweek-forecast{
-    display: flex;
     background-color: var(--bg1);
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     height: 300px;
-    width: 750px;
-
+    width: 100%;
+    display: flex;
     margin-top: 10px;
     border: 2px solid;
-    border-color: white;
+    border-color: purple;
     flex-direction: row;
 
 }
 
 .sevenday{
     background-color: var(--bg1);
-    height: 296px;
-    width: 150px;
-    margin: 0px;
-    border: 1px solid white;
+    display: flex;
     border-top: none;
     border-bottom: none;
+    height: 50px;
+    width: 14.28%;
+    border: 1px solid purple;
 }
 
 .government-alerts {
-    display: flex;
     background-color: var(--bg1);
     justify-content: center;
     align-items: center;
     height: 500px;
-    width: 750px;
+    width: 100%;
 
     margin-top: 10px;
     border: 2px solid;
@@ -156,34 +157,31 @@ body{
 }
 
 footer {
-    display: flex;
     justify-content: center; 
     align-items: center;
     width: 100vw;
-
-    margin-top: 10px;
     border: 2px solid;
     border-color: white;
+    display: flex;
   }
   
 .resources-column{
-        display: flex;
-        background-color: black;
+
+        /* background-color: black; */
         width: 500px;
-        height: 70px;
+        /* height: 70px; */
         border: 2px solid;
-        border-color: white;
+        /* border-color: white; */
         flex-direction: row; 
         justify-content: space-around; 
 
 }
 .additionalcontact-column {
-    display: flex;
-    background-color: black;
+    /* background-color: black; */
     width: 500px;
-    height: 70px;
+    /* height: 70px; */
     border: 2px solid;
-    border-color: white;
+    /* border-color: white; */
     flex-direction: row; 
     justify-content: space-around; 
 }

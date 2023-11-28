@@ -11,87 +11,88 @@
     </head>
 
     <body>
-        <!-- Search Box -->
-        <div class="search-box">
-            <div class="row">
-                <i class="fa-solid fa-location-dot"></i>
-                <input type="text" id="search-inputbox" placeholder="Search-location"
-                autocomplete="off">
-                or
-                <input type="text" id="zipcode" placeholder="Zipcode"
-                autocomplete="off">
-                <button class="fa-solid fa-magnifying-glass">Search</button>
+
+            <!-- Search Box -->
+            <div class="search-box">
+                <div class="row">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" id="search-inputbox" placeholder="Search-location"
+                    autocomplete="off">
+                    or
+                    <input type="text" id="zipcode" placeholder="Zipcode"
+                    autocomplete="off">
+                    <button class="fa-solid fa-magnifying-glass">Search</button>
+                </div>
+                <div class="invalid-search">
+                    <img src="images/404error.png" alt="404 Error">
+                    Invalid Location. Please Try Again...
+                </div>
             </div>
-            <div class="invalid-search">
-                <img src="images/404error.png" alt="404 Error">
-                Invalid Location. Please Try Again...
+            <div class="container">
+            <!-- Search Location -->
+            <div class="city-name">
+                <h2>City name</h2>
+
             </div>
-        </div>
 
-        <!-- Search Location -->
-        <div class="city-name">
-            <h2>City name</h2>
-
-        </div>
-
-        <!-- Current Weather Img -->
-        <div class="current-weatherimg">
-            <h2> Current Weather Img </h2>
-            <img src="images/default.png" alt="Default img">
-        </div>
-
-        <!-- Current Day Information -->
-        <div class="current-dayinfo">
-            <h2>Today's Weather</h2>
-            <div class="weather-details" id="weather-details">
-                <i class="fa-solid fa-temperature-full"></i>
-                <p><strong>Temperature:</strong> <div id="temperature"></div></p>
-                <i class="fa-solid fa-temperature-arrow-up"></i>
-                <p><strong>Humidity:</strong> <div id="humidity"></div></p>
-                <i class="fa-solid fa-wind"></i>
-                <p><strong>Wind:</strong> <div id="wind"></div></p>
-                <i class="fa-solid fa-eye"></i>
-                <p><strong>Visibility:</strong> <div id="visibility"></div></p>
-                <i class="fa-solid fa-cloud"></i>
-                <p><strong>Cloud Cover:</strong> <div id="cloudCover"></div></p>
-                <i class="fa-solid fa-cloud-sun"></i>
-                <p><strong>Sunrise:</strong> <div id="sunrise"></div></p>
-                <i class="fa-solid fa-cloud-moon"></i>
-                <p><strong>Sunset:</strong> <div id="sunset"></div></p>
+            <!-- Current Weather Img -->
+            <div class="current-weatherimg">
+                <h2> Current Weather Img </h2>
+                <img src="images/default.png" alt="Default img">
             </div>
-        </div>
 
-         <!-- Today's Hourly Forecast -->
-         <div class="sevenday-forecast">
-            <div class="hourly hour1">hour1</div>
-            <div class="hourly hour2">hour2</div>
-            <div class="hourly hour3">hour3</div>
-            <div class="hourly hour4">hour4</div>
-            <div class="hourly hour5">hour5</div>
-            <div class="hourly hour6">hour6</div>
-            <div class="hourly hour7">hour7</div>
-            <div class="hourly hour8">hour8</div>
-            <div class="hourly hour9">hour9</div>
-            <div class="hourly hour10">hour10</div>
-            <div class="hourly hour11">hour11</div>
-            <div class="hourly hour12">hour12</div>
-        </div>
-        
-        <!-- Rest of the week Forecast -->
-        <div class="restoftheweek-forecast">
-            <div class="sevenday day2">Day 2</div>
-            <div class="sevenday day3">Day 3</div>
-            <div class="sevenday day4">Day 4</div>
-            <div class="sevenday day5">Day 5</div>
-            <div class="sevenday day6">Day 6</div>
-            <div class="sevenday day7">Day 7</div>
+            <!-- Current Day Information -->
+            <div class="current-dayinfo">
+                <h2>Today's Weather</h2>
+                <div class="weather-details" id="weather-details">
+                    <i class="fa-solid fa-temperature-full"></i>
+                    <p><strong>Temperature:</strong> <div id="temperature"></div></p>
+                    <i class="fa-solid fa-temperature-arrow-up"></i>
+                    <p><strong>Humidity:</strong> <div id="humidity"></div></p>
+                    <i class="fa-solid fa-wind"></i>
+                    <p><strong>Wind:</strong> <div id="wind"></div></p>
+                    <i class="fa-solid fa-eye"></i>
+                    <p><strong>Visibility:</strong> <div id="visibility"></div></p>
+                    <i class="fa-solid fa-cloud"></i>
+                    <p><strong>Cloud Cover:</strong> <div id="cloudCover"></div></p>
+                    <i class="fa-solid fa-cloud-sun"></i>
+                    <p><strong>Sunrise:</strong> <div id="sunrise"></div></p>
+                    <i class="fa-solid fa-cloud-moon"></i>
+                    <p><strong>Sunset:</strong> <div id="sunset"></div></p>
+                </div>
             </div>
-        </div>
 
-        <!-- Monthly Prediction -->
-        <div class="government-alerts">
-            <h2>Government Alerts</h2>
+            <!-- Today's Hourly Forecast -->
+            <div class="sevenday-forecast">
+                <div class="hourly hour1">hour1</div>
+                <div class="hourly hour2">hour2</div>
+                <div class="hourly hour3">hour3</div>
+                <div class="hourly hour4">hour4</div>
+                <div class="hourly hour5">hour5</div>
+                <div class="hourly hour6">hour6</div>
+                <div class="hourly hour7">hour7</div>
+                <div class="hourly hour8">hour8</div>
+                <div class="hourly hour9">hour9</div>
+                <div class="hourly hour10">hour10</div>
+                <div class="hourly hour11">hour11</div>
+                <div class="hourly hour12">hour12</div>
+            </div>
+            
+            <!-- Rest of the week Forecast -->
+            <div class="restoftheweek-forecast">
+                <div class="sevenday day2">Day 2</div>
+                <div class="sevenday day3">Day 3</div>
+                <div class="sevenday day4">Day 4</div>
+                <div class="sevenday day5">Day 5</div>
+                <div class="sevenday day6">Day 6</div>
+                <div class="sevenday day7">Day 7</div>
+                <div class="sevenday day8">Day 8</div>
+            </div>
 
+            <!-- Monthly Prediction -->
+            <div class="government-alerts">
+                <h2>Government Alerts</h2>
+            </div>
         </div>
 
         <!-- Footer -->
@@ -104,7 +105,6 @@
                     <a href="https://www.weather.gov/dial-a-forecast/">Weather Emergency Hotline</a>
                 </div>
             </div>
-
             <!-- This needs more work when we get the contact stuff ready -->
             <div class="additionalcontact-column">
                 <h4>Additional Contact info</h4>

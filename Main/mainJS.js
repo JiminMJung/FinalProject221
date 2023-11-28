@@ -95,3 +95,7 @@ function updateWeatherDetails(lat, lon) {
             console.error('Fetching Current-Weather-Data-Api (Weather Details) Error:', error);
         });
 }
+
+// function uses lat and lon to fetch data from api for hourly weather data
+
+// function uses lat and lon to fetch data from api for daily weather data for next 7 days
