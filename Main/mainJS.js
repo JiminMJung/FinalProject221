@@ -114,6 +114,9 @@ function hourlyAndDaily(lat, lon) {
 
             hourlyText(data);
             dailyText(data);
+            console.log(data["hourly"][0]["dt"]);
+            unixToDay(data["hourly"][0]["dt"]);
+            unixToHour(data["hourly"][0]["dt"]);
         })
     }
 
@@ -134,4 +137,20 @@ function dailyText(arr) {
         document.querySelector(`.day${i}`).innerText = 
         ``;
     }
+}
+
+// function to convert unix timestamp to date time format
+function unixToDay(num) {
+    const date = new Date(num*1000);
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const current_date = `${month}/${day}`;
+    console.log(current_date);
+    return current_date;
+}
+
+function unixToHour(num) {
+    const date = new Date(num*1000);
+    console.log(date.getHours())
+    return date.getHours();
 }
