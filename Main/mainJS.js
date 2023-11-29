@@ -19,6 +19,7 @@ document.querySelector('.search-box button').addEventListener("click", () => {
             document.querySelector('.city-name').innerText = city.name;
             updateWeatherImage(city.lat, city.lon);
             updateWeatherDetails(city.lat, city.lon);
+            hourlyAndDaily(city.lat, city.lon);
         })
         .catch(error => {
             console.error('Fetching Geocoding Api Error:', error);
@@ -35,7 +36,7 @@ function updateWeatherImage(lat, lon) {
         .then(response => response.json())
         .then(weatherData => {
             
-            console.log('Weather Data:', weatherData);
+            console.log('Weather Data:', weatherData); // console weather data
 
             const weatherImage = getWeatherImage(weatherData.weather[0].description);
 
@@ -96,6 +97,40 @@ function updateWeatherDetails(lat, lon) {
         });
 }
 
-// function uses lat and lon to fetch data from api for hourly weather data
+// function uses lat and lon to fetch data from api for hourly weather data, uses helper functions to update hourly and daily innter text sections
+function hourlyAndDaily(lat, lon) {
+    const paid_key = "99d2b2119564b967920fc9c79ab0f977";
+    const units = "imperial";
+    const currentweatherdataApi = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${paid_key}`
+    fetch(currentweatherdataApi)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Data:", data); // print data in so we can work with it visually
 
-// function uses lat and lon to fetch data from api for daily weather data for next 7 days
+            hourlyText(data);
+        })
+    }
+
+
+// function uses openweathermap's One Call 3.0 API json array to update inner text of hourly section to display weather data of searched location
+function hourlyText(arr) {
+    for (let i=1; i<13; i++) {
+        // sets inner text for the hourly section for next 12 hours
+        document.querySelector(`.hour${i}`).innerText =
+        `` ;
+    }
+}
+
+// function uses openweathermap's One Call 3.0 API json array to update inner text of hourly section to display weather data of searched location
+function dailyText(arr) {
+    for (let i=1; i<8; i++) {
+        // set inner text for daily section for next 7 days (excludes current day as it's displayed above)
+        document.querySelector(`.day${i}`).innerText = 
+        ``;
+    }
+}
