@@ -91,7 +91,7 @@ body{
 }
 
 /*  Styles todays-hourlyforecast */
-.sevenday-forecast {
+.hourly-forecast {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr;
@@ -121,11 +121,13 @@ body{
 /* Styles restoftheweek-forecast */
 .restoftheweek-forecast{
     background-color: var(--bg1);
-    /* justify-content: center; */
-    /* align-items: center; */
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    overflow-x: scroll;
+
     height: 300px;
     width: 100%;
-    display: flex;
     margin-top: 10px;
     border: 2px solid;
     border-color: purple;
@@ -136,10 +138,9 @@ body{
 .sevenday{
     background-color: var(--bg1);
     display: flex;
+
     border-top: none;
     border-bottom: none;
-    height: 100%;
-    width: 14.285%;
     border: 1px solid purple;
 }
 

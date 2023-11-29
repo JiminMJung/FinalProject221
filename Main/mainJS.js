@@ -1,4 +1,5 @@
 const apiKey = "0458eed4077f6961f51b967ffde6eddf";
+const units = "imperial";
 
 // Main Function
 document.querySelector('.search-box button').addEventListener("click", () => {
@@ -31,7 +32,7 @@ document.querySelector('.search-box button').addEventListener("click", () => {
 
 // This function updates the weather image by calling & fetching the api, display image and catches errors
 function updateWeatherImage(lat, lon) {
-    const currentweatherdataApi = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+    const currentweatherdataApi = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
     fetch(currentweatherdataApi)
         .then(response => response.json())
         .then(weatherData => {
@@ -78,7 +79,7 @@ function getWeatherImage(condition) {
 
 // This function updates the weather details by calling & fetching the api, display the content and catches errors
 function updateWeatherDetails(lat, lon) {
-    const currentweatherdataApi = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+    const currentweatherdataApi = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
 
     fetch(currentweatherdataApi)
         .then(response => response.json())
@@ -100,7 +101,6 @@ function updateWeatherDetails(lat, lon) {
 // function uses lat and lon to fetch data from api for hourly weather data, uses helper functions to update hourly and daily innter text sections
 function hourlyAndDaily(lat, lon) {
     const paid_key = "99d2b2119564b967920fc9c79ab0f977";
-    const units = "imperial";
     const currentweatherdataApi = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${paid_key}`
     fetch(currentweatherdataApi)
         .then(response => {
@@ -113,6 +113,7 @@ function hourlyAndDaily(lat, lon) {
             console.log("Data:", data); // print data in so we can work with it visually
 
             hourlyText(data);
+            dailyText(data);
         })
     }
 
