@@ -114,16 +114,13 @@ function hourlyAndDaily(lat, lon) {
 
             hourlyText(data);
             dailyText(data);
-            console.log(data["hourly"][0]["dt"]);
-            unixToDay(data["hourly"][0]["dt"]);
-            unixToHour(data["hourly"][0]["dt"]);
         })
     }
 
 
 // function uses openweathermap's One Call 3.0 API json array to update inner text of hourly section to display weather data of searched location
 function hourlyText(arr) {
-    for (let i=1; i<13; i++) {
+    for (let i=0; i<12; i++) {
         // sets inner text for the hourly section for next 12 hours
         document.querySelector(`.hour${i}`).innerText =
         `` ;
@@ -133,14 +130,25 @@ function hourlyText(arr) {
 // function uses openweathermap's One Call 3.0 API json array to update inner text of hourly section to display weather data of searched location
 function dailyText(arr) {
     for (let i=1; i<8; i++) {
+        // daily weather data being displayed
+        const date = unixToDate(arr["daily"][i]["dt"]);
+        const min = arr["daily"][i]["temp"]["min"];
+        const max = arr["daily"][i]["temp"]["max"];
+        const summary = arr["daily"][i]["summary"];
+        const humidity = arr["daily"][i]["humidity"];
+        const uvi = arr["daily"][i]["uvi"];
+
         // set inner text for daily section for next 7 days (excludes current day as it's displayed above)
-        document.querySelector(`.day${i}`).innerText = 
-        ``;
+        document.querySelector(`.day${i}`).innerHTML = 
+        `${date}
+        <br>
+
+        `;
     }
 }
 
 // function to convert unix timestamp to date time format
-function unixToDay(num) {
+function unixToDate(num) {
     const date = new Date(num*1000);
     const month = date.getMonth() + 1;
     const day = date.getDate();
