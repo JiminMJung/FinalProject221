@@ -21,6 +21,7 @@ document.querySelector('.search-box button').addEventListener("click", () => {
             updateWeatherImage(city.lat, city.lon);
             updateWeatherDetails(city.lat, city.lon);
             hourlyAndDaily(city.lat, city.lon);
+
         })
         .catch(error => {
             console.error('Fetching Geocoding Api Error:', error);
@@ -114,6 +115,15 @@ function hourlyAndDaily(lat, lon) {
 
             hourlyText(data);
             dailyText(data);
+            if (data.alerts && data.alerts.length > 0) {
+                displayAlerts(data.alerts); // Call a function to display the alerts on the webpage
+            } else {
+                console.log('No alerts for this location.');
+                const alertsContainer = document.querySelector('.weather-alerts-container');
+                alertsContainer.innerHTML = '<p>No weather alerts for this location.</p>';
+               
+                
+            }
         })
     }
 
@@ -193,4 +203,46 @@ function unixToHour(num) {
         time = time-12;
         return `${time}PM`;
     }
+}
+
+
+
+// function handles displays of weather alerts in the HTML
+function displayAlerts(alert) {
+    const alertsContainer = document.querySelector('.weather-alerts-container');
+    
+  
+        alertsContainer.innerHTML = ''; // Clear any  alerts
+
+        alert.forEach(alerts => {
+            const alertElement = document.createElement('div');
+            alertElement.classList.add('weather-alert');
+
+            const sender = document.createElement('p');
+            sender.innerText = `Sender: ${alerts.sender_name}`;
+
+            const event = document.createElement('p');
+            event.innerText = `Event: ${alerts.event}`;
+
+            const start = new Date(alerts.start * 1000).toLocaleString();
+            const end = new Date(alerts.end * 1000).toLocaleString();
+
+            const duration = document.createElement('p');
+            duration.innerText = `Duration: ${start} to ${end}`;
+
+            const description = document.createElement('p');
+            description.innerText = `Description: ${alerts.description}`;
+
+            const tags = document.createElement('p');
+            tags.innerText = `Tags: ${alerts.tags}`;
+
+            alertElement.appendChild(sender);
+            alertElement.appendChild(event);
+            alertElement.appendChild(duration);
+            alertElement.appendChild(description);
+            alertElement.appendChild(tags);
+
+            alertsContainer.appendChild(alertElement);
+        });
+    
 }
