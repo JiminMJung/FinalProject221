@@ -120,10 +120,21 @@ function hourlyAndDaily(lat, lon) {
 
 // function uses openweathermap's One Call 3.0 API json array to update inner text of hourly section to display weather data of searched location
 function hourlyText(arr) {
-    for (let i=0; i<12; i++) {
+    for (let i=1; i<13; i++) {
+        // hourly weather data being displayed
+        const hour = unixToHour(arr["hourly"][i-1]["dt"]);
+        const temp = arr["hourly"][i-1]["temp"];
+        const feelsLike = arr["hourly"][i-1]["feels_like"];
+        const humidity = arr["hourly"][i-1]["humidity"];
+        const wind = arr["hourly"][i-1]["wind_speed"];
+
         // sets inner text for the hourly section for next 12 hours
-        document.querySelector(`.hour${i}`).innerText =
-        `` ;
+        const temp_div = document.querySelector(`.hour${i}`);
+        temp_div.innerHTML = 
+        `${hour}<br><br>
+        ${temp}°F<br><br>
+        Feels Like: <br>${feelsLike}°F<br><br>
+        Wind: <br>${wind}mph`
     }
 }
 
@@ -131,34 +142,55 @@ function hourlyText(arr) {
 function dailyText(arr) {
     for (let i=1; i<8; i++) {
         // daily weather data being displayed
-        const date = unixToDate(arr["daily"][i]["dt"]);
+        const date = unixToDay(arr["daily"][i]["dt"]);
         const min = arr["daily"][i]["temp"]["min"];
         const max = arr["daily"][i]["temp"]["max"];
         const summary = arr["daily"][i]["summary"];
         const humidity = arr["daily"][i]["humidity"];
         const uvi = arr["daily"][i]["uvi"];
+        const sunrise = new 
+        Date(arr["daily"][i]["sunrise"] * 1000)
+        .toLocaleTimeString();
+        const sunset = new 
+        Date(arr["daily"][i]["sunset"] * 1000)
+        .toLocaleTimeString();
 
         // set inner text for daily section for next 7 days (excludes current day as it's displayed above)
-        document.querySelector(`.day${i}`).innerHTML = 
-        `${date}
-        <br>
-
-        `;
+        const temp_div = document.querySelector(`.day${i}`);temp_div.innerHTML = 
+        `${date}<br><br>
+        ${summary}<br>
+        High: ${max}°F<br>
+        Low: ${min}°F<br>
+        Humidity: ${humidity}%<br>
+        UV Index: ${uvi}<br>
+        Sunrise: ${sunrise}<br>
+        Sunset: ${sunset}`;
     }
 }
 
-// function to convert unix timestamp to date time format
-function unixToDate(num) {
+// function to convert unix timestamp to a String representing day of the week
+function unixToDay(num) {
     const date = new Date(num*1000);
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    const current_date = `${month}/${day}`;
-    console.log(current_date);
-    return current_date;
+    const weekday = date.toLocaleDateString('en-US', {weekday: 'long'});
+    return weekday;
 }
 
+// function to convert unix timestamp to a String representing the hour
 function unixToHour(num) {
     const date = new Date(num*1000);
-    console.log(date.getHours())
-    return date.getHours();
+    let time = date.getHours();
+    // if statements to format
+    if (time == 0) {
+        return "12AM";
+    }
+    else if (time >= 1 && time <= 11) {
+        return `${time}AM`;
+    }
+    else if (time == 12) {
+        return "12PM";
+    }
+    else {
+        time = time-12;
+        return `${time}PM`;
+    }
 }
