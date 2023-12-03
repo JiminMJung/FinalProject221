@@ -89,7 +89,10 @@ function updateWeatherDetails(lat, lon) {
         .then(response => response.json())
         .then(weatherData => {
 
-            document.getElementById('temperature').innerText = `${weatherData.main.temp} °F`;
+            document.getElementById('temperature').innerHTML = `<br>
+            High: ${weatherData.main.temp_max} °F
+            <br>
+            Low: ${weatherData.main.temp_min} °F`;
             document.getElementById('humidity').innerText = `${weatherData.main.humidity}%`;
             document.getElementById('wind').innerText = `${weatherData.wind.speed} m/s, ${weatherData.wind.deg}°`;
             document.getElementById('visibility').innerText = `${weatherData.visibility} meters`;
