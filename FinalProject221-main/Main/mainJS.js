@@ -1,7 +1,7 @@
 const apiKey = "0458eed4077f6961f51b967ffde6eddf";
 const units = "imperial";
 
-// Main Function
+// Main Function - Jimin
 document.querySelector('.search-box button').addEventListener("click", () => {
     const cityName = document.getElementById("search-inputbox").value;
 
@@ -20,7 +20,7 @@ document.querySelector('.search-box button').addEventListener("click", () => {
             document.querySelector('.city-name').innerText = city.name;
             updateWeatherImage(city.lat, city.lon);
             updateWeatherDetails(city.lat, city.lon);
-            hourlyAndDaily(city.lat, city.lon);
+            hourlyAndDaily(city.lat, city.lon); // - Jason
 
         })
         .catch(error => {
@@ -30,8 +30,9 @@ document.querySelector('.search-box button').addEventListener("click", () => {
         });
         
 });
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// This function updates the weather image by calling & fetching the api, display image and catches errors
+// Helper This function updates the weather image by calling & fetching the api, display image and catches errors - Jimin
 function updateWeatherImage(lat, lon) {
     const currentweatherdataApi = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
     fetch(currentweatherdataApi)
@@ -42,7 +43,8 @@ function updateWeatherImage(lat, lon) {
 
             const weatherImage = getWeatherImage(weatherData.weather[0].description);
 
-            document.querySelector('.current-weatherimg h2').innerText = 'Current Weather Img';
+            document.querySelector('.current-weatherimg h2').innerText = 'Current Weather';
+
             document.querySelector('.current-weatherimg img').src = weatherImage;
         })
         .catch(error => {
@@ -50,35 +52,33 @@ function updateWeatherImage(lat, lon) {
 
         });
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Current Weather Image Function (Uses switch case with api response data given)
+// Helper Current Weather Image Function (Uses switch case with api response data given) - Jimin
 function getWeatherImage(condition) {
     let imageWeather;
 
-    switch (condition.toLowerCase()) {
-        case 'rain':
-            imageWeather = 'images/rain.png';
-            break;
-        case 'cloudy':
-            imageWeather = 'images/clouds.png';
-            break;
-        case 'snow':
-            imageWeather = 'images/snow.png';
-            break;
-        case 'clear':
-            imageWeather = 'images/sun.png';
-            break;
-        case 'thunderstorm':
-            imageWeather = 'images/thunder.png';
-            break;
-        default:
-            imageWeather = 'images/default.png';
+    const lowerCondition = condition.toLowerCase();
+
+    if (lowerCondition.includes('mist')) {
+        imageWeather = 'images/rain.png';
+    } else if (lowerCondition.includes('clouds')) {
+        imageWeather = 'images/clouds.png';
+    } else if (lowerCondition.includes('snow')) {
+        imageWeather = 'images/snow.png';
+    } else if (lowerCondition.includes('clear')) {
+        imageWeather = 'images/sun.png';
+    } else if (lowerCondition.includes('rain')) {
+        imageWeather = 'images/thunder.png';
+    } else {
+        imageWeather = 'images/default.png';
     }
 
     return imageWeather;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// This function updates the weather details by calling & fetching the api, display the content and catches errors
+// Helper This function updates the weather details by calling & fetching the api, display the content and catches errors - Jimin
 function updateWeatherDetails(lat, lon) {
     const currentweatherdataApi = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
 
@@ -98,8 +98,10 @@ function updateWeatherDetails(lat, lon) {
             console.error('Fetching Current-Weather-Data-Api (Weather Details) Error:', error);
         });
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// function uses lat and lon to fetch data from api for hourly weather data, uses helper functions to update hourly and daily innter text sections
+
+// function uses lat and lon to fetch data from api for hourly weather data, uses helper functions to update hourly and daily innter text sections - Jason
 function hourlyAndDaily(lat, lon) {
     const paid_key = "99d2b2119564b967920fc9c79ab0f977";
     const currentweatherdataApi = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${paid_key}`
@@ -126,9 +128,9 @@ function hourlyAndDaily(lat, lon) {
             }
         })
     }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-// function uses openweathermap's One Call 3.0 API json array to update inner text of hourly section to display weather data of searched location
+// Helper function uses openweathermap's One Call 3.0 API json array to update inner text of hourly section to display weather data of searched location - Jason
 function hourlyText(arr) {
     for (let i=1; i<13; i++) {
         // hourly weather data being displayed
@@ -147,8 +149,9 @@ function hourlyText(arr) {
         Wind: <br>${wind}mph`
     }
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// function uses openweathermap's One Call 3.0 API json array to update inner text of hourly section to display weather data of searched location
+// Helper function uses openweathermap's One Call 3.0 API json array to update inner text of hourly section to display weather data of searched location - Jason
 function dailyText(arr) {
     for (let i=1; i<8; i++) {
         // daily weather data being displayed
@@ -177,15 +180,17 @@ function dailyText(arr) {
         Sunset: ${sunset}`;
     }
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// function to convert unix timestamp to a String representing day of the week
+// Helper function to convert unix timestamp to a String representing day of the week - Jason
 function unixToDay(num) {
     const date = new Date(num*1000);
     const weekday = date.toLocaleDateString('en-US', {weekday: 'long'});
     return weekday;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// function to convert unix timestamp to a String representing the hour
+// Helper function to convert unix timestamp to a String representing the hour - Jason
 function unixToHour(num) {
     const date = new Date(num*1000);
     let time = date.getHours();
@@ -204,10 +209,9 @@ function unixToHour(num) {
         return `${time}PM`;
     }
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
-// function handles displays of weather alerts in the HTML
+// function handles displays of weather alerts in the HTML - Destin
 function displayAlerts(alert) {
     const alertsContainer = document.querySelector('.weather-alerts-container');
     
@@ -246,3 +250,4 @@ function displayAlerts(alert) {
         });
     
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
