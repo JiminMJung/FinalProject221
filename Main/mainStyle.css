@@ -58,6 +58,11 @@ body {
     text-align: center;
 }
 
+.error-image {
+    width: 50%;
+    height: auto;
+}
+
 /* City Name */
 .city-name {
     margin-bottom: 30px;

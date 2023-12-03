@@ -4,8 +4,6 @@ const units = "imperial";
 // Main Function - Jimin
 document.querySelector('.search-box button').addEventListener("click", () => {
     const cityName = document.getElementById("search-inputbox").value;
-
-    console.log(cityName); // testing if value is properly obtained
     
     const zipcode = document.getElementById("zipcode").value;
 
@@ -14,18 +12,23 @@ document.querySelector('.search-box button').addEventListener("click", () => {
     fetch(geocodeApi)
         .then(response => response.json())
         .then(data => {
+            // const error_block = document.querySelector(".invalid-search");
+            // if (error_block != null) {
+            //     error_block.remove();
+            // }
 
             const city = data[0];
             // This displays the city name (Line 16) and calls the two functions to update weather image and weather details (Uses line 13. Json response data is an array)
             document.querySelector('.city-name').innerText = city.name;
             updateWeatherImage(city.lat, city.lon);
             updateWeatherDetails(city.lat, city.lon);
-            hourlyAndDaily(city.lat, city.lon); // - Jason
+            hourlyAndDaily(city.lat, city.lon);
 
         })
         .catch(error => {
             console.error('Fetching Geocoding Api Error:', error);
             alert('Error fetching geocoding data. TRY AGAIN!');
+            console.log(error);
             document.querySelector('.invalid-search').style.display = 'block';
         });
         
@@ -137,7 +140,6 @@ function hourlyText(arr) {
         const hour = unixToHour(arr["hourly"][i-1]["dt"]);
         const temp = arr["hourly"][i-1]["temp"];
         const feelsLike = arr["hourly"][i-1]["feels_like"];
-        const humidity = arr["hourly"][i-1]["humidity"];
         const wind = arr["hourly"][i-1]["wind_speed"];
 
         // sets inner text for the hourly section for next 12 hours
