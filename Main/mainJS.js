@@ -86,7 +86,7 @@ function updateWeatherDetails(lat, lon) {
         .then(response => response.json())
         .then(weatherData => {
 
-            document.getElementById('temperature').innerText = `${weatherData.main.temp} °C`;
+            document.getElementById('temperature').innerText = `${weatherData.main.temp} °F`;
             document.getElementById('humidity').innerText = `${weatherData.main.humidity}%`;
             document.getElementById('wind').innerText = `${weatherData.wind.speed} m/s, ${weatherData.wind.deg}°`;
             document.getElementById('visibility').innerText = `${weatherData.visibility} meters`;
@@ -171,9 +171,9 @@ function dailyText(arr) {
         // set inner text for daily section for next 7 days (excludes current day as it's displayed above)
         const temp_div = document.querySelector(`.day${i}`);temp_div.innerHTML = 
         `${date}<br><br>
-        ${summary}<br>
-        High: ${max}°F<br>
-        Low: ${min}°F<br>
+        ${summary}<br><br>
+        High: ${max}°F<br><br>
+        Low: ${min}°F<br><br>
         Humidity: ${humidity}%<br>
         UV Index: ${uvi}<br>
         Sunrise: ${sunrise}<br>
