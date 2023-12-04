@@ -12,10 +12,7 @@ document.querySelector('.search-box button').addEventListener("click", () => {
     fetch(geocodeApi)
         .then(response => response.json())
         .then(data => {
-            // const error_block = document.querySelector(".invalid-search");
-            // if (error_block != null) {
-            //     error_block.remove();
-            // }
+            document.querySelector('.invalid-search').style.display = 'none';
 
             const city = data[0];
             // This displays the city name (Line 16) and calls the two functions to update weather image and weather details (Uses line 13. Json response data is an array)
