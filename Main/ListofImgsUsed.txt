@@ -1,10 +1,25 @@
-404 Img:
+404 Images Used:
 https://iconscout.com/illustration/404-error-6920419 (404error.png)
 
-Weather Img:
+Weather Images Used:
 <a href="https://www.flaticon.com/free-icons/sun" title="sun icons">Sun icons created by Freepik - Flaticon</a> (sun.png)
 <a href="https://www.flaticon.com/free-icons/rain" title="rain icons">Rain icons created by Freepik - Flaticon</a> (rain.png)
 <a href="https://www.flaticon.com/free-icons/thunder" title="thunder icons">Thunder icons created by Freepik - Flaticon</a> (thunder.png)
 <a href="https://www.flaticon.com/free-icons/snow" title="snow icons">Snow icons created by Freepik - Flaticon</a> (snow.png)
 <a href="https://www.flaticon.com/free-icons/cloud" title="cloud icons">Cloud icons created by Freepik - Flaticon</a> (clouds.png)
 <a href="https://www.flaticon.com/free-icons/meteorology" title="meteorology icons">Meteorology icons created by Freepik - Flaticon</a> (default.png)
+<a href="https://www.flaticon.com/free-icons/fog" title="fog icons">Fog icons created by Freepik - Flaticon</a> (Haze.png)
+
+Resources used:
+https://weather.com (For Referance/Inspiration)
+APPLE Iphone Weather App (For Referance/Inspiration)
+
+https://fontawesome.com (For Icons)
+https://www.flaticon.com (For Weather Images)
+ChatGPT 3.5 (Used as a Tool to reorganzise and clean-up/debug code)
+
+https://openweathermap.org/api/geocoding-api (Geocoding api)
+https://openweathermap.org/api/one-call-3 (Weather api and Weather alert)
+
+
+

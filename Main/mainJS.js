@@ -70,6 +70,8 @@ function getWeatherImage(condition) {
         imageWeather = 'images/sun.png';
     } else if (lowerCondition.includes('rain')) {
         imageWeather = 'images/thunder.png';
+    } else if (lowerCondition.includes('haze')) {
+        imageWeather = 'images/haze.png';
     } else {
         imageWeather = 'images/default.png';
     }
