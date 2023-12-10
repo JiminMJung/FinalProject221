@@ -1,4 +1,5 @@
-const apiKey = "0458eed4077f6961f51b967ffde6eddf";
+const apiKey = "filler";
+const paid_key = "filler";
 const units = "imperial";
 
 // Main Function - Jimin
@@ -108,7 +109,6 @@ function updateWeatherDetails(lat, lon) {
 
 // function uses lat and lon to fetch data from api for hourly weather data, uses helper functions to update hourly and daily innter text sections - Jason
 function hourlyAndDaily(lat, lon) {
-    const paid_key = "99d2b2119564b967920fc9c79ab0f977";
     const currentweatherdataApi = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${paid_key}`
     fetch(currentweatherdataApi)
         .then(response => {
